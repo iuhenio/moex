@@ -37,9 +37,9 @@ func basicAuth(c *config) string {
 
 }
 
-func getCurrentPrice(s string) float64 {
+func getCurrentPrice(s string, c config) float64 {
 	client := &http.Client{}
-	url := "https://iss.moex.com/iss/engines/stock/markets/shares/boards/tqbr/securities/" + s + ".json?iss.meta=off&iss.data=on&iss.json=compact&iss.only=marketdata&marketdata.columns=LAST"
+	url := c.MoexPrefixHttps + "iss/engines/stock/markets/shares/boards/tqbr/securities/" + s + ".json?iss.meta=off&iss.data=on&iss.json=compact&iss.only=marketdata&marketdata.columns=LAST"
 	req, err := http.NewRequest("GET", url, nil)
 	resp, err := client.Do(req)
 	if err != nil {

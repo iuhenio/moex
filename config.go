@@ -13,6 +13,8 @@ type config struct {
 	Password           string `yaml:"password"`
 	UserName           string `yaml:"userName"`
 	RequestInterval    int16  `yaml:"requestInterval"`
+	TlgChatId          int64  `yaml:"tlgChatId"`
+	TlgAccessToken     string `yaml:"tlgAccessToken"`
 	Shares             []struct {
 		Ticker     string  `yaml:"ticker"`
 		Startprice float64 `yaml:"startprice"`
