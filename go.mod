@@ -1,4 +1,4 @@
-module moex
+module github.com/iuhenio/moex
 
 go 1.15
 
