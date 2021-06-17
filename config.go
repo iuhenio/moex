@@ -29,7 +29,7 @@ func newConfig() *config {
 
 	c := &config{}
 
-	file, err := ioutil.ReadFile(".vars.yml")
+	file, err := ioutil.ReadFile("/etc/vars.yml")
 	if err != nil {
 		log.Printf("file.Get err #%v", err)
 	}

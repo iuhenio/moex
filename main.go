@@ -1,7 +1,9 @@
 package main
 
 import (
+	"log"
 	"math"
+	"net/http"
 	"strconv"
 	"time"
 )
@@ -30,7 +32,13 @@ func calcProfit(number int16, startprice, sellprice float64, c config) float64 {
 	return profit
 }
 
+func startServer() {
+	err := http.ListenAndServe(":8080", nil)
+	log.Fatal(err)
+}
+
 func main() {
+	go startServer()
 	go backgroundTask()
 	select {}
 
